@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ==============================================================
+     ✏️  EDIT ONLY THIS PART  ✏️
+
+     1) Your website name goes on the "name" line, your own name on "owner".
+     2) Paste your Instagram link between the quotes.
+        Leave the quotes empty ("") to hide the button.
+     Then save the file. That's it!
+     ============================================================== -->
+<script>
+  window.SITE = {
+    name:      "MUSE Art & Photography",
+    owner:     "Raghad Ali",
+    instagram: "https://instagram.com/ririali.gallery"
+  };
+</script>
+<!-- ========== no need to change anything below this line ========== -->
+
+<title>coming soon ✿</title>
+<meta name="description" content="Something new is on its way. We're under maintenance and painting something lovely. Come back soon!">
+<meta property="og:title" content="Under maintenance ✿">
+<meta property="og:description" content="Something new is on its way. We're under maintenance and painting something lovely. Come back soon!">
+<meta name="theme-color" content="#fff9f3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#3b2a4a;
+    --ink-soft:#5d4b6e;
+    --cream:#fff9f3;
+    --lilac:#cdb8ff;
+    --peach:#ffc8a8;
+    --mint:#b4efd2;
+    --sky:#b3dbff;
+    --pink:#ffb6d9;
+    --butter:#fff0a3;
+    --pink-deep:#ff8cc3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    min-height:100vh;min-height:100dvh;
+    display:flex;flex-direction:column;
+    background:var(--cream);color:var(--ink);
+    font-family:"Fredoka",ui-rounded,system-ui,sans-serif;
+    overflow-x:hidden;
+    cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><circle cx='14' cy='14' r='9' fill='%23ffb6d9' stroke='%233b2a4a' stroke-width='2.5'/></svg>") 14 14, auto;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-user-select:none;user-select:none;
+  }
+  [hidden]{display:none!important}
+
+  /* ---------- dreamy background blobs ---------- */
+  .blobs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;filter:blur(48px)}
+  .blob{position:absolute;opacity:.8;border-radius:42% 58% 63% 37%/45% 40% 60% 55%;
+        animation:drift 24s ease-in-out infinite alternate,morph 16s ease-in-out infinite alternate}
+  .b1{width:48vmax;height:48vmax;background:var(--lilac);top:-18vmax;left:-14vmax}
+  .b2{width:44vmax;height:44vmax;background:var(--peach);bottom:-20vmax;right:-12vmax;animation-delay:-7s,-3s}
+  .b3{width:34vmax;height:34vmax;background:var(--mint);top:38%;left:-20vmax;animation-delay:-12s,-9s}
+  .b4{width:38vmax;height:38vmax;background:var(--sky);top:-16vmax;right:-16vmax;animation-delay:-4s,-12s}
+  .b5{width:30vmax;height:30vmax;background:var(--pink);bottom:-14vmax;left:28%;animation-delay:-9s,-6s}
+  @keyframes drift{
+    0%{transform:translate(0,0) rotate(0deg)}
+    50%{transform:translate(6vw,4vh) rotate(40deg)}
+    100%{transform:translate(-4vw,8vh) rotate(-20deg)}
+  }
+  @keyframes morph{
+    0%{border-radius:42% 58% 63% 37%/45% 40% 60% 55%}
+    50%{border-radius:63% 37% 40% 60%/55% 62% 38% 45%}
+    100%{border-radius:37% 63% 55% 45%/38% 50% 50% 62%}
+  }
+
+  /* paper grain for an art-print feel */
+  .grain{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.22;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .23 0 0 0 0 .16 0 0 0 0 .29 0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+  /* ---------- shapes (doodles + confetti) ---------- */
+  .f{fill:currentColor;stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+  .sq-o{fill:none;stroke:var(--ink);stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+  .sq-i{fill:none;stroke:currentColor;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  .ring-o{fill:none;stroke:var(--ink);stroke-width:9}
+  .ring-i{fill:none;stroke:currentColor;stroke-width:5}
+
+  .doodle{position:fixed;z-index:2;pointer-events:none;width:clamp(34px,5vw,58px);height:auto;overflow:visible;
+          animation:float 7s ease-in-out infinite alternate}
+  .d1{top:10%;left:8%;--rot:-12deg}
+  .d2{top:13%;right:9%;--rot:10deg;animation-duration:8.5s;width:clamp(46px,7vw,80px)}
+  .d3{bottom:15%;left:7%;--rot:8deg;animation-duration:6.5s}
+  .d4{bottom:12%;right:8%;--rot:-8deg;animation-duration:9s}
+  .d5{top:46%;left:4%;--rot:14deg;animation-duration:7.5s}
+  .d6{top:50%;right:5%;--rot:-14deg;animation-duration:8s}
+  @keyframes float{
+    from{transform:translateY(0) rotate(var(--rot))}
+    to{transform:translateY(-16px) rotate(calc(var(--rot) * -1))}
+  }
+
+  /* ---------- main content ---------- */
+  main{position:relative;z-index:3;flex:1;width:100%;max-width:62rem;margin:0 auto;
+       display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+       padding:clamp(3rem,8vh,5rem) 16px 2rem}
+
+  .name{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.6em;font-weight:600;font-size:clamp(.9rem,2.4vw,1.05rem);
+        letter-spacing:.28em;text-transform:uppercase}
+  .name .fl{color:var(--pink-deep);letter-spacing:0;font-size:1.25em}
+
+  .pill{margin-top:1.1rem;display:inline-flex;align-items:center;gap:.55em;padding:.42em 1.05em;
+        background:var(--mint);border:2.5px solid var(--ink);border-radius:999px;box-shadow:3px 3px 0 var(--ink);
+        font-weight:600;font-size:.95rem;transform:rotate(-2.5deg)}
+  .dot{width:.65em;height:.65em;border-radius:50%;background:var(--pink-deep);border:2px solid var(--ink);
+       animation:blink 1.4s ease-in-out infinite}
+  @keyframes blink{50%{transform:scale(.6);opacity:.5}}
+
+  .title-wrap{position:relative;margin-top:clamp(1.2rem,3vh,2rem)}
+  .headline{font-family:"Shrikhand",cursive;font-weight:400;font-size:clamp(2.6rem,11.5vw,7.4rem);line-height:1.08;
+            display:flex;flex-wrap:wrap;justify-content:center;column-gap:.28em}
+  .word{display:inline-flex;white-space:nowrap}
+  .ch{display:inline-block;color:var(--c,var(--lilac));
+      -webkit-text-stroke:.07em var(--ink);paint-order:stroke fill;
+      text-shadow:.045em .055em 0 var(--ink);
+      transition:color .3s;
+      animation:bob 2.6s ease-in-out infinite;animation-delay:calc((12 - var(--i)) * -.14s)}
+  @keyframes bob{
+    0%,100%{transform:translateY(0) rotate(var(--r,0deg))}
+    50%{transform:translateY(-.08em) rotate(calc(var(--r,0deg) * -1))}
+  }
+
+
+  .sub{margin-top:.5rem;font-family:"Caveat",cursive;font-weight:700;font-size:clamp(1.9rem,5.2vw,2.9rem);line-height:1.15}
+  .scribble{position:relative;display:inline-block;white-space:nowrap}
+  .scribble svg{position:absolute;left:-4%;bottom:-.16em;width:108%;height:.42em;overflow:visible}
+  .scribble path{fill:none;stroke:var(--pink-deep);stroke-width:5;stroke-linecap:round;
+                 stroke-dasharray:100;stroke-dashoffset:100;animation:draw 1.3s .9s cubic-bezier(.6,0,.3,1) forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+
+  .msg{margin-top:1.3rem;max-width:34rem;font-size:clamp(1.02rem,2.6vw,1.15rem);line-height:1.65;color:var(--ink-soft)}
+
+  .loader{margin-top:1.8rem;width:min(21rem,100%)}
+  .bar{height:24px;padding:3px;background:#fff;border:2.5px solid var(--ink);border-radius:999px;
+       box-shadow:3px 3px 0 var(--ink);overflow:hidden}
+  .fill{position:relative;display:block;height:100%;width:10%;border-radius:999px;overflow:hidden;
+        animation:grow 9s ease-in-out infinite}
+  .fill::before{content:"";position:absolute;top:0;bottom:0;left:-90px;right:-90px;
+    background:repeating-linear-gradient(-45deg,var(--lilac) 0 10px,var(--pink) 10px 20px,var(--peach) 20px 30px,
+               var(--butter) 30px 40px,var(--mint) 40px 50px,var(--sky) 50px 60px);
+    animation:slide 1.6s linear infinite}
+  @keyframes slide{to{transform:translateX(84.85px)}}
+  @keyframes grow{0%{width:8%}40%{width:64%}50%{width:58%}82%{width:91%}100%{width:8%}}
+  .loader-text{margin-top:.55rem;font-family:"Caveat",cursive;font-weight:500;font-size:1.45rem;
+               transition:opacity .3s,transform .3s}
+  .loader-text.swap{opacity:0;transform:translateY(4px)}
+
+  .actions{margin-top:1.7rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem}
+  .socials{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem}
+  .music{font-family:inherit;line-height:inherit;cursor:pointer;--bg:var(--lilac)}
+  .eq{display:none;align-items:flex-end;gap:2px;height:1.05em;width:1.25em;justify-content:center}
+  .eq i{display:block;width:3px;height:40%;background:var(--ink);border-radius:2px;animation:eq .8s ease-in-out infinite alternate}
+  .eq i:nth-child(2){animation-delay:-.25s}
+  .eq i:nth-child(3){animation-delay:-.5s}
+  @keyframes eq{from{height:25%}to{height:100%}}
+  .music[aria-pressed="true"] .eq{display:inline-flex}
+  .music[aria-pressed="true"] .note{display:none}
+  .socials a,.music{display:inline-flex;align-items:center;gap:.5em;padding:.6em 1.15em;
+             background:var(--bg);color:var(--ink);text-decoration:none;font-weight:600;font-size:1rem;
+             border:2.5px solid var(--ink);border-radius:999px;box-shadow:3px 3px 0 var(--ink);
+             transition:transform .15s ease,box-shadow .15s ease}
+  .socials a:hover,.music:hover{transform:translate(-2px,-2px) rotate(-2deg);box-shadow:5px 5px 0 var(--ink)}
+  .socials a:active,.music:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  .socials a:focus-visible,.music:focus-visible{outline:3px dashed var(--ink);outline-offset:4px}
+  .socials svg,.music svg{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+  .hint{margin-top:1.6rem;font-family:"Caveat",cursive;font-size:1.4rem;color:var(--ink-soft);transform:rotate(-1.5deg)}
+  .hint b{font-weight:700;color:var(--ink)}
+
+  footer{position:relative;z-index:3;text-align:center;padding:1rem 16px 1.4rem;font-size:.85rem;color:var(--ink-soft)}
+
+  /* click-to-play layers */
+  .splats{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .splat{position:absolute;border-radius:50%;filter:blur(18px);opacity:0}
+  .fx{position:fixed;inset:0;z-index:40;pointer-events:none;overflow:hidden}
+  .p{position:absolute;will-change:transform,opacity}
+  .p svg{display:block;width:100%;height:100%;overflow:visible}
+
+  /* ---------- oud sticker (sits next to "Under", dances with the music, tap to strum) ---------- */
+  .oud{position:absolute;left:0;top:0;z-index:4;padding:0;margin:0;border:0;background:none;cursor:pointer;
+       visibility:hidden;-webkit-tap-highlight-color:transparent}
+  .oud.ready{visibility:visible}
+  .oud:focus-visible{outline:3px dashed var(--ink);outline-offset:6px;border-radius:14px}
+  .oud-in{display:block;width:100%;height:100%;transform-origin:50% 85%;
+          animation:sway 3.2s ease-in-out infinite alternate}
+  .oud svg{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(3px 3px 0 var(--ink))}
+  .oud-edge *{fill:#fff;stroke:#fff;stroke-width:12;stroke-linejoin:round;stroke-linecap:round}
+  .o-body{fill:var(--butter);stroke:var(--ink);stroke-width:3}
+  .o-inlay{fill:none;stroke:var(--pink-deep);stroke-width:2.4;stroke-dasharray:.5 5;stroke-linecap:round}
+  .o-neck{fill:var(--lilac);stroke:var(--ink);stroke-width:3}
+  .o-head{fill:var(--peach);stroke:var(--ink);stroke-width:3;stroke-linejoin:round}
+  .o-pegs{fill:none;stroke:var(--ink);stroke-width:4.5;stroke-linecap:round}
+  .o-rose{fill:var(--pink);stroke:var(--ink);stroke-width:2.5}
+  .o-rose-in{fill:none;stroke:var(--ink);stroke-width:1.3;stroke-dasharray:2 2.2}
+  .o-guard{fill:var(--lilac);stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round}
+  .o-ink{fill:var(--ink)}
+  .str{fill:none;stroke:var(--ink);stroke-width:.9;opacity:.75}
+  @keyframes sway{from{transform:rotate(7deg) translateY(0)}to{transform:rotate(17deg) translateY(-5%)}}
+  @keyframes jam{                               /* on the beat of the music (96 bpm) */
+    0%,50%,100%{transform:rotate(12deg) translateY(0) scale(1.05,.95)}
+    25%{transform:rotate(1deg) translateY(-9%) scale(.97,1.04)}
+    75%{transform:rotate(23deg) translateY(-9%) scale(.97,1.04)}
+  }
+  .jamming .oud-in{animation:jam 1.25s ease-in-out infinite}
+  .jamming .oud .str{animation:buzz .09s linear infinite alternate}
+  @keyframes buzz{to{transform:translateX(.7px)}}
+  .oud-note{font:700 1.7rem/1 "Fredoka",sans-serif;-webkit-text-stroke:1.3px var(--ink);paint-order:stroke fill;
+            text-shadow:2px 2px 0 var(--ink)}
+
+  @media (max-width:640px){
+    .headline{font-size:11.8vw}
+    .name{letter-spacing:.16em}
+    .d5,.d6{display:none}
+    .d1{top:3%;left:4%}
+    .d2{top:4%;right:4%}
+    .d3{bottom:4%;left:4%}
+    .d4{bottom:3%;right:4%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .blob,.doodle,.ch,.dot,.fill,.fill::before,.eq i,.oud-in,.oud .str{animation:none!important}
+    .oud-in{transform:rotate(12deg)}
+    .fill{width:72%}
+    .scribble path{animation:none;stroke-dashoffset:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="blobs" aria-hidden="true">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <span class="blob b4"></span><span class="blob b5"></span>
+</div>
+<div class="splats" aria-hidden="true"></div>
+
+<!-- floating doodles -->
+<svg class="doodle d1" viewBox="0 0 40 40" style="color:var(--butter)" aria-hidden="true">
+  <path class="f" d="M20 3l4.9 10.6 11.6 1.3-8.6 7.9 2.4 11.4L20 28.4 9.7 34.2l2.4-11.4L3.5 14.9l11.6-1.3z"/>
+</svg>
+<svg class="doodle d2" viewBox="0 0 40 40" style="color:var(--lilac)" aria-hidden="true">
+  <path class="sq-o" d="M3 24c5-10 9-10 12 0s7 10 11 0 8-10 11 0"/>
+  <path class="sq-i" d="M3 24c5-10 9-10 12 0s7 10 11 0 8-10 11 0"/>
+</svg>
+<svg class="doodle d3" viewBox="0 0 40 40" style="color:var(--pink)" aria-hidden="true">
+  <g class="f"><circle cx="20" cy="9.5" r="7"/><circle cx="30" cy="16.8" r="7"/><circle cx="26.2" cy="28.5" r="7"/><circle cx="13.8" cy="28.5" r="7"/><circle cx="10" cy="16.8" r="7"/></g>
+  <circle class="f" cx="20" cy="19.5" r="5" style="fill:var(--butter)"/>
+</svg>
+<svg class="doodle d4" viewBox="0 0 40 40" style="color:var(--mint)" aria-hidden="true">
+  <circle class="ring-o" cx="20" cy="20" r="13"/><circle class="ring-i" cx="20" cy="20" r="13"/>
+</svg>
+<svg class="doodle d5" viewBox="0 0 40 40" style="color:var(--peach)" aria-hidden="true">
+  <path class="f" d="M20 35S4 25 4 14a8 8 0 0 1 16-2 8 8 0 0 1 16 2c0 11-16 21-16 21z"/>
+</svg>
+<svg class="doodle d6" viewBox="0 0 40 40" style="color:var(--sky)" aria-hidden="true">
+  <path class="f" d="M20 2c1.5 10 6.5 15 16.5 18-10 3-15 8-16.5 18-1.5-10-6.5-15-16.5-18 10-3 15-8 16.5-18z"/>
+</svg>
+
+<main>
+  <p class="name"><span class="fl">✿</span><span data-name>MUSE Art &amp; Photography</span><span class="fl">✿</span></p>
+  <p class="pill"><span class="dot"></span>coming soon</p>
+
+  <div class="title-wrap">
+    <h1 class="headline"><span class="word">Under</span> <span class="word">maintenance</span></h1>
+    <!-- oud sticker -->
+    <button class="oud" type="button" aria-label="Strum the oud">
+      <span class="oud-in">
+        <svg viewBox="0 0 100 180" aria-hidden="true">
+          <g class="oud-edge">
+            <path d="M50 58C66 58 92 90 92 121S73 173 50 173 8 152 8 121 34 58 50 58Z"/>
+            <rect x="43" y="18" width="14" height="60" rx="3"/>
+            <path d="M44 22 28 3Q31-1 36 1L57 22Z"/>
+            <path d="M39.2 16.3l-5.4 4.5M35.2 11.6l-5.4 4.5M31.2 6.8l-5.4 4.5M50.7 15.7l4.9-4.9M45.5 10.5l4.9-4.9M40.2 5.2l4.9-4.9"/>
+          </g>
+          <path class="o-body" d="M50 58C66 58 92 90 92 121S73 173 50 173 8 152 8 121 34 58 50 58Z"/>
+          <path class="o-inlay" transform="translate(50 121) scale(.86) translate(-50 -121)" d="M50 58C66 58 92 90 92 121S73 173 50 173 8 152 8 121 34 58 50 58Z"/>
+          <circle class="o-rose" cx="31" cy="97" r="4.5"/><circle class="o-ink" cx="31" cy="97" r="1.3"/>
+          <circle class="o-rose" cx="69" cy="97" r="4.5"/><circle class="o-ink" cx="69" cy="97" r="1.3"/>
+          <circle class="o-rose" cx="50" cy="113" r="12"/>
+          <circle class="o-rose-in" cx="50" cy="113" r="7.5"/><circle class="o-ink" cx="50" cy="113" r="2.6"/>
+          <path class="o-guard" d="M36 135Q50 129 64 135Q60 150 50 152Q40 150 36 135Z"/>
+          <path class="o-pegs" d="M39.2 16.3l-5.4 4.5M35.2 11.6l-5.4 4.5M31.2 6.8l-5.4 4.5M50.7 15.7l4.9-4.9M45.5 10.5l4.9-4.9M40.2 5.2l4.9-4.9"/>
+          <path class="o-head" d="M44 22 28 3Q31-1 36 1L57 22Z"/>
+          <rect class="o-neck" x="43" y="18" width="14" height="60" rx="3"/>
+          <g class="str"><path d="M45 158 46.6 21M47.5 158 48.3 21M50 158V21M52.5 158 51.7 21M55 158 53.4 21"/></g>
+          <rect class="o-ink" x="36" y="155" width="28" height="5.5" rx="2.2"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+
+  <p class="sub">…coming back in a whole <span class="scribble">new way<svg viewBox="0 0 160 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" d="M3 13C30 5 52 18 82 10S132 4 157 12"/></svg></span> ✦</p>
+
+  <div class="loader" aria-hidden="true">
+    <div class="bar"><span class="fill"></span></div>
+    <p class="loader-text" id="loaderText">mixing colors…</p>
+  </div>
+
+  <div class="actions">
+    <nav class="socials" aria-label="Find us online"></nav>
+    <button class="music" type="button" aria-pressed="false">
+      <svg class="note" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="music-label">play music</span>
+    </button>
+  </div>
+
+  <p class="hint" id="hint">psst… click anywhere ✿</p>
+</main>
+
+<footer>© <span id="year">2026</span> <span data-name>MUSE Art &amp; Photography</span><span id="byline"> · by <span data-owner>Raghad Ali</span></span></footer>
+
+<div class="fx" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<script>
+(function(){
+  var S = window.SITE || {};
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var touch  = window.matchMedia && matchMedia('(hover: none)').matches;
+  var COLORS = ['var(--lilac)','var(--peach)','var(--mint)','var(--sky)','var(--pink)','var(--butter)'];
+  var HEX    = ['#cdb8ff','#ffc8a8','#b4efd2','#b3dbff','#ffb6d9','#fff0a3'];
+  var rnd  = function(a,b){ return a + Math.random()*(b-a); };
+  var pick = function(arr){ return arr[Math.floor(Math.random()*arr.length)]; };
+
+  /* name + year */
+  var name = (S.name || '').trim();
+  document.querySelectorAll('[data-name]').forEach(function(el){ el.textContent = name; });
+  if (!name) document.querySelector('.name').hidden = true;
+  var owner = (S.owner || '').trim();
+  document.querySelectorAll('[data-owner]').forEach(function(el){ el.textContent = owner; });
+  if (!owner) document.getElementById('byline').hidden = true;
+  document.title = (name ? name + ' · ' : '') + 'under maintenance ✿';
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* bouncy headline letters */
+  var h1 = document.querySelector('.headline');
+  h1.setAttribute('aria-label', h1.textContent.replace(/\s+/g,' ').trim());
+  var n = 0;
+  h1.querySelectorAll('.word').forEach(function(w){
+    var txt = w.textContent; w.textContent = ''; w.setAttribute('aria-hidden','true');
+    Array.from(txt).forEach(function(c){
+      var s = document.createElement('span');
+      s.className = 'ch'; s.textContent = c;
+      s.dataset.ci = n % COLORS.length;
+      s.style.setProperty('--i', n);
+      s.style.setProperty('--c', COLORS[n % COLORS.length]);
+      s.style.setProperty('--r', (Math.random()*8 - 4).toFixed(1) + 'deg');
+      w.appendChild(s); n++;
+    });
+  });
+
+  /* shrink the big title if it is wider than the screen */
+  var mainEl = document.querySelector('main');
+  /* the oud sticker sits just to the right of "Under" and grows/shrinks with the title */
+  function placeOud(){
+    var oud = document.querySelector('.oud'), wrapEl = document.querySelector('.title-wrap');
+    var words = h1.querySelectorAll('.word');
+    if (!oud || !wrapEl || !words.length) return;
+    var wrap = wrapEl.getBoundingClientRect(), a = words[0].getBoundingClientRect();
+    if (words[1]){ var b2 = words[1].getBoundingClientRect(); if (Math.abs(b2.top - a.top) < 4) a = b2; }
+    var fs = parseFloat(getComputedStyle(h1).fontSize), h = fs * 1.4, w = h * 100 / 180;
+    oud.style.width = w + 'px'; oud.style.height = h + 'px';
+    oud.style.left = Math.min(a.right - wrap.left + fs * .22, wrap.width - w * 1.15) + 'px';
+    oud.style.top = (a.top - wrap.top - fs * .35) + 'px';
+    oud.classList.add('ready');
+  }
+  function fitTitle(){
+    h1.style.fontSize = '';
+    var cs = getComputedStyle(mainEl);
+    var avail = mainEl.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    var widest = 0;
+    h1.querySelectorAll('.word').forEach(function(w){ widest = Math.max(widest, w.getBoundingClientRect().width); });
+    var room = avail * 0.94;
+    if (widest > room){
+      h1.style.fontSize = (parseFloat(getComputedStyle(h1).fontSize) * room / widest) + 'px';
+    }
+    placeOud();
+  }
+  fitTitle();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitTitle);
+  window.addEventListener('resize', fitTitle);
+
+  /* social buttons */
+  var ICONS = {
+    instagram:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".7" fill="currentColor"/></svg>',
+    tiktok:'<svg viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2.4 4.6 5 4.8"/></svg>',
+    pinterest:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M11 13.5 9.6 20"/><path d="M9.2 13c-.5-.7-.6-1.5-.4-2.4.4-1.7 1.9-2.8 3.6-2.6 1.8.2 2.9 1.6 2.7 3.3-.2 1.9-1.5 3.3-3 3.1-.9-.1-1.4-.7-1.3-1.5"/></svg>'
+  };
+  var LABELS = { instagram:'Instagram', tiktok:'TikTok', pinterest:'Pinterest' };
+  var BGS    = { instagram:'var(--pink)', tiktok:'var(--sky)', pinterest:'var(--butter)' };
+  var nav = document.querySelector('.socials');
+  Object.keys(LABELS).forEach(function(k){
+    var url = (S[k] || '').trim(); if (!url) return;
+    var a = document.createElement('a');
+    a.href = url; a.target = '_blank'; a.rel = 'noopener';
+    a.style.setProperty('--bg', BGS[k]);
+    a.innerHTML = ICONS[k] + '<span>' + LABELS[k] + '</span>';
+    nav.appendChild(a);
+  });
+  if (!nav.children.length) nav.hidden = true;
+
+  /* silly loading messages */
+  var msgs = ['mixing colors…','developing photos…','focusing the lens…','sketching new ideas…','sprinkling sparkles…','almost there (ish)…'];
+  var lt = document.getElementById('loaderText'), m = 0;
+  setInterval(function(){
+    lt.classList.add('swap');
+    setTimeout(function(){ m = (m + 1) % msgs.length; lt.textContent = msgs[m]; lt.classList.remove('swap'); }, 300);
+  }, 2400);
+
+  /* click-to-play */
+  var hint = document.getElementById('hint');
+  var verb = touch ? 'tap' : 'click';
+  hint.textContent = 'psst… ' + verb + ' anywhere ✿';
+
+  var SHAPES = {
+    star:'<path class="f" d="M20 3l4.9 10.6 11.6 1.3-8.6 7.9 2.4 11.4L20 28.4 9.7 34.2l2.4-11.4L3.5 14.9l11.6-1.3z"/>',
+    heart:'<path class="f" d="M20 35S4 25 4 14a8 8 0 0 1 16-2 8 8 0 0 1 16 2c0 11-16 21-16 21z"/>',
+    sparkle:'<path class="f" d="M20 2c1.5 10 6.5 15 16.5 18-10 3-15 8-16.5 18-1.5-10-6.5-15-16.5-18 10-3 15-8 16.5-18z"/>',
+    dot:'<circle class="f" cx="20" cy="20" r="12"/>',
+    flower:'<g class="f"><circle cx="20" cy="9.5" r="7"/><circle cx="30" cy="16.8" r="7"/><circle cx="26.2" cy="28.5" r="7"/><circle cx="13.8" cy="28.5" r="7"/><circle cx="10" cy="16.8" r="7"/></g><circle class="f" cx="20" cy="19.5" r="5" style="fill:var(--butter)"/>',
+    squiggle:'<path class="sq-o" d="M3 24c5-10 9-10 12 0s7 10 11 0 8-10 11 0"/><path class="sq-i" d="M3 24c5-10 9-10 12 0s7 10 11 0 8-10 11 0"/>',
+    ring:'<circle class="ring-o" cx="20" cy="20" r="12"/><circle class="ring-i" cx="20" cy="20" r="12"/>'
+  };
+  var shapeNames = Object.keys(SHAPES);
+  var fx = document.querySelector('.fx'), splats = document.querySelector('.splats');
+  var count = 0;
+
+  function splash(x, y){
+    // soft watercolor splat behind everything
+    var sp = document.createElement('div'); sp.className = 'splat';
+    var sz = rnd(110, 200);
+    sp.style.cssText = 'left:'+(x - sz/2)+'px;top:'+(y - sz/2)+'px;width:'+sz+'px;height:'+sz+'px;background:'+pick(HEX);
+    splats.appendChild(sp);
+    sp.animate([
+      { opacity:0,  transform:'scale(.3)' },
+      { opacity:.75,transform:'scale(1)', offset:.15 },
+      { opacity:0,  transform:'scale(1.25)' }
+    ], { duration: reduce ? 1200 : 3200, easing:'ease-out' }).onfinish = function(){ sp.remove(); };
+
+    if (fx.childElementCount > 160) return;
+    var total = reduce ? 4 : Math.round(rnd(7, 11));
+    for (var k = 0; k < total; k++){
+      var p = document.createElement('div'); p.className = 'p';
+      var s = rnd(20, 42);
+      p.style.cssText = 'width:'+s+'px;height:'+s+'px;left:'+(x - s/2)+'px;top:'+(y - s/2)+'px';
+      p.innerHTML = '<svg viewBox="0 0 40 40" style="color:'+pick(HEX)+'">' + SHAPES[pick(shapeNames)] + '</svg>';
+      fx.appendChild(p);
+      var ang = rnd(0, Math.PI*2), dist = reduce ? rnd(10, 30) : rnd(60, 170);
+      var dx = Math.cos(ang)*dist, dy = Math.sin(ang)*dist, rot = rnd(-220, 220);
+      var frames = reduce
+        ? [ { opacity:0, transform:'scale(.6)' },
+            { opacity:1, transform:'translate('+dx+'px,'+dy+'px) scale(1)', offset:.3 },
+            { opacity:0, transform:'translate('+dx+'px,'+dy+'px) scale(1)' } ]
+        : [ { opacity:1, transform:'translate(0,0) scale(0) rotate(0deg)' },
+            { opacity:1, transform:'translate('+dx+'px,'+dy+'px) scale(1.1) rotate('+(rot*.6)+'deg)', offset:.45 },
+            { opacity:0, transform:'translate('+(dx*1.15)+'px,'+(dy*1.15 + 70)+'px) scale(.8) rotate('+rot+'deg)' } ];
+      (function(el){
+        el.animate(frames, { duration: rnd(1100, 1700), easing:'cubic-bezier(.2,.7,.3,1)', fill:'forwards' })
+          .onfinish = function(){ el.remove(); };
+      })(p);
+    }
+  }
+
+  /* ---------- original Saudi (Khaleeji) style track, made with code (no music file needed) ----------
+     Oud melody in maqam Bayati (with its real quarter-tone note), Khaleeji group hand claps,
+     tabl drum, riq tambourine, strings and bass. Written for this page, not copied from any song. */
+  var Music = (function(){
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    var ctx, master, bus, oudBus, revIn, dlyIn, noise, oudBuf, oudHz;
+    var timer = null, nextTime = 0, step = 0, wanted = false;
+    var S16 = 60 / 96 / 4;                        // 96 beats per minute, one 16th note
+    var SWING = S16 * .22;                        // the Khaleeji shuffle
+    var Q = 63.5;                                 // E half-flat: the quarter-tone note of maqam Bayati
+    var SCALE = [62, Q, 65, 67, 69, 70, 72, 74];  // D Bayati
+    // original oud melody: [16th step, note, length in 16ths] for each of the 16 bars
+    var MEL = [
+      // intro: oud alone over a drone, like a taqsim
+      [[0,69,6],[6,70,2],[8,69,2],[10,67,2],[12,65,4]],
+      [[0,67,4],[4,65,2],[6,Q,2],[8,62,8]],
+      [[0,62,2],[2,Q,2],[4,65,2],[6,67,2],[8,69,4],[12,72,4]],
+      [[0,70,4],[4,69,2],[6,67,2],[8,65,2],[10,Q,2],[12,62,4]],
+      // part A: the beat comes in
+      [[0,62,3],[3,65,3],[6,67,2],[8,69,4],[12,67,2],[14,69,2]],
+      [[0,70,3],[3,69,3],[6,67,2],[8,65,4],[12,Q,4]],
+      [[0,62,3],[3,65,3],[6,67,2],[8,69,3],[11,72,3],[14,70,2]],
+      [[0,69,3],[3,67,3],[6,65,2],[8,Q,4],[12,62,4]],
+      // part B: higher, with strings
+      [[0,74,3],[3,72,3],[6,74,2],[8,75.5,4],[12,74,4]],
+      [[0,72,3],[3,70,3],[6,72,2],[8,69,8]],
+      [[0,69,2],[2,70,2],[4,72,2],[6,74,2],[8,75.5,3],[11,77,3],[14,75.5,2]],
+      [[0,74,3],[3,72,3],[6,70,2],[8,69,2],[10,67,2],[12,69,4]],
+      // ending: back down to D, then it loops
+      [[0,69,2],[2,67,2],[4,69,2],[6,70,2],[8,69,8]],
+      [[0,67,2],[2,65,2],[4,67,2],[6,69,2],[8,67,8]],
+      [[0,65,3],[3,67,3],[6,69,2],[8,70,2],[10,69,2],[12,67,2],[14,65,2]],
+      [[0,Q,4],[4,65,2],[6,Q,2],[8,62,8]]
+    ];
+    // bass note for the first and second half of each bar (0 = no bass)
+    var BASS = [[0,0],[0,0],[0,0],[0,0], [38,38],[43,43],[38,41],[36,38],
+                [38,38],[46,41],[41,36],[46,45], [41,41],[36,36],[46,41],[36,38]];
+    function hz(m){ return 440 * Math.pow(2, (m - 69) / 12); }
+
+    function init(){
+      ctx = new AC();
+      ctx.onstatechange = function(){ if (api.onchange) api.onchange(); };
+      var sr = ctx.sampleRate;
+      master = ctx.createGain(); master.gain.value = 0;
+      var comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -14; comp.ratio.value = 4;
+      master.connect(comp); comp.connect(ctx.destination);
+      bus = ctx.createGain(); bus.connect(master);
+      // warm hall reverb
+      revIn = ctx.createGain();
+      var rev = ctx.createConvolver(), revOut = ctx.createGain(); revOut.gain.value = .35;
+      var len = Math.floor(sr * 2.2), ir = ctx.createBuffer(2, len, sr);
+      for (var c = 0; c < 2; c++){
+        var d = ir.getChannelData(c);
+        for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3.5);
+      }
+      rev.buffer = ir; revIn.connect(rev); rev.connect(revOut); revOut.connect(master);
+      // soft echo
+      dlyIn = ctx.createGain();
+      var dly = ctx.createDelay(1), fb = ctx.createGain(), tone = ctx.createBiquadFilter(), dlyOut = ctx.createGain();
+      dly.delayTime.value = S16 * 3; fb.gain.value = .25;
+      tone.type = 'lowpass'; tone.frequency.value = 2400; dlyOut.gain.value = .25;
+      dlyIn.connect(dly); dly.connect(tone); tone.connect(fb); fb.connect(dly); tone.connect(dlyOut); dlyOut.connect(master);
+      // the oud's wooden, slightly nasal body
+      oudBus = ctx.createGain();
+      var body = ctx.createBiquadFilter(), soft = ctx.createBiquadFilter();
+      body.type = 'peaking'; body.frequency.value = 1100; body.Q.value = 1.2; body.gain.value = 6;
+      soft.type = 'lowpass'; soft.frequency.value = 4200;
+      oudBus.connect(body); body.connect(soft); send(soft, null, .3, .2);
+      // one plucked string (Karplus-Strong), re-tuned for every note
+      var N = Math.round(sr / hz(62)), L = Math.floor(sr * 2), lp = 0;
+      oudBuf = ctx.createBuffer(1, L, sr);
+      var y = oudBuf.getChannelData(0);
+      for (var k = 0; k < L; k++){
+        if (k < N){ lp += ((Math.random() * 2 - 1) - lp) * .5; y[k] = lp; }
+        else y[k] = .996 * .5 * (y[k - N] + (k > N ? y[k - N - 1] : 0));
+      }
+      oudHz = sr / (N + .5);
+      // white noise for the drums and claps
+      noise = ctx.createBuffer(1, sr, sr);
+      var nd = noise.getChannelData(0);
+      for (var j = 0; j < nd.length; j++) nd[j] = Math.random() * 2 - 1;
+    }
+    function send(node, dest, rev, dly){
+      node.connect(dest || bus);
+      if (rev){ var r = ctx.createGain(); r.gain.value = rev; node.connect(r); r.connect(revIn); }
+      if (dly){ var e = ctx.createGain(); e.gain.value = dly; node.connect(e); e.connect(dlyIn); }
+    }
+    function env(g, t, peak, a, d){
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(peak, t + a);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + a + d);
+    }
+    function hit(t, filter, freq, q, vol, a, d, rev){   // a burst of filtered noise
+      var n = ctx.createBufferSource(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+      n.buffer = noise; f.type = filter; f.frequency.value = freq; f.Q.value = q;
+      env(g, t, vol, a, d);
+      n.connect(f); f.connect(g); send(g, null, rev, 0);
+      n.start(t, Math.random() * .5); n.stop(t + a + d + .02);
+    }
+
+    /* percussion */
+    function dum(t, vol){                         // deep tabl hit
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.frequency.setValueAtTime(115, t);
+      o.frequency.exponentialRampToValueAtTime(62, t + .18);
+      env(g, t, vol, .003, .42);
+      o.connect(g); send(g, null, .15, 0); o.start(t); o.stop(t + .5);
+      hit(t, 'lowpass', 500, 1, vol * .5, .002, .05, 0);
+    }
+    function tak(t, vol){                         // sharp rim hit
+      hit(t, 'bandpass', 3200, 1.4, vol, .001, .06, .2);
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'triangle';
+      o.frequency.setValueAtTime(620, t); o.frequency.exponentialRampToValueAtTime(380, t + .05);
+      env(g, t, vol * .7, .001, .05);
+      o.connect(g); send(g); o.start(t); o.stop(t + .08);
+    }
+    function clap(t, vol){                        // a group of people clapping together
+      for (var p = 0; p < 3; p++){
+        hit(t + p * .011 + Math.random() * .006, 'bandpass', 1050 + p * 250, 1.1,
+            vol * (p === 2 ? 1 : .6), .001, p === 2 ? .14 : .018, .55);
+      }
+    }
+    function riq(t, vol){ hit(t, 'highpass', 6500, .7, vol, .002, .11, .1); }   // tambourine jingles
+
+    /* oud, strings, drone, bass */
+    function pluckAt(m, t, vol, dur){
+      var s = ctx.createBufferSource(), g = ctx.createGain(), rate = hz(m) / oudHz;
+      s.buffer = oudBuf;
+      s.playbackRate.setValueAtTime(rate * .985, t);  // a tiny slide into the note
+      s.playbackRate.linearRampToValueAtTime(rate, t + .035);
+      g.gain.setValueAtTime(vol, t);
+      g.gain.setValueAtTime(vol, t + dur - .05);
+      g.gain.linearRampToValueAtTime(0.0001, t + dur);
+      s.connect(g); g.connect(oudBus);
+      s.start(t); s.stop(t + dur + .02);
+    }
+    function oud(m, t, len, vol){                 // long notes get the oud's quick tremolo
+      var reps = len >= 6 ? len * 2 : 1, gap = S16 / 2;
+      for (var r = 0; r < reps; r++){
+        var last = r === reps - 1;
+        pluckAt(m, t + r * gap, r ? vol * (r % 2 ? .5 : .62) : vol,
+                last ? (reps > 1 ? .5 : len * S16 + .5) : gap + .02);
+      }
+    }
+    function run(t, up){                          // a quick qanun-style sweep through the scale
+      for (var r = 0; r < 8; r++) pluckAt(SCALE[up ? r : 7 - r] + 12, t + r * S16 / 2, .16, .35);
+    }
+    function strings(m, t, len){
+      var lp = ctx.createBiquadFilter(), g = ctx.createGain(), lfo = ctx.createOscillator(), wob = ctx.createGain();
+      var end = t + len, oscs = [lfo];
+      lp.type = 'lowpass'; lp.frequency.value = 2000;
+      lfo.frequency.value = 5;                    // gentle vibrato
+      wob.gain.setValueAtTime(0, t); wob.gain.linearRampToValueAtTime(12, t + .3);
+      lfo.connect(wob);
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.linearRampToValueAtTime(.018, t + .09);
+      g.gain.setValueAtTime(.018, end);
+      g.gain.linearRampToValueAtTime(0.0001, end + .2);
+      lp.connect(g); send(g, null, .5, 0);
+      [[m, -7], [m, 7], [m - 12, 0]].forEach(function(v){
+        var o = ctx.createOscillator(); o.type = 'sawtooth';
+        o.frequency.value = hz(v[0]); o.detune.value = v[1];
+        wob.connect(o.detune); o.connect(lp); oscs.push(o);
+      });
+      oscs.forEach(function(o){ o.start(t); o.stop(end + .25); });
+    }
+    function drone(t, len){                       // soft D–A–D underneath the intro
+      [50, 57, 62].forEach(function(m){
+        var o = ctx.createOscillator(), lp = ctx.createBiquadFilter(), g = ctx.createGain();
+        o.type = 'sawtooth'; o.frequency.value = hz(m);
+        lp.type = 'lowpass'; lp.frequency.value = 700;
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.linearRampToValueAtTime(.015, t + 1.5);
+        g.gain.setValueAtTime(.015, t + len - 1);
+        g.gain.linearRampToValueAtTime(0.0001, t + len + .5);
+        o.connect(lp); lp.connect(g); send(g, null, .4, 0);
+        o.start(t); o.stop(t + len + .6);
+      });
+    }
+    function bass(m, t, len, vol){
+      var o = ctx.createOscillator(), sub = ctx.createOscillator(), lp = ctx.createBiquadFilter(), g = ctx.createGain();
+      o.type = 'triangle'; o.frequency.value = hz(m);
+      sub.type = 'sine'; sub.frequency.value = hz(m);
+      lp.type = 'lowpass'; lp.frequency.value = 900;
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(vol, t + .01);
+      g.gain.exponentialRampToValueAtTime(vol * .5, t + len * .6);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + len);
+      o.connect(lp); sub.connect(lp); lp.connect(g); send(g);
+      o.start(t); sub.start(t); o.stop(t + len + .02); sub.stop(t + len + .02);
+    }
+
+    /* the song: 16 bars (intro, part A, part B, ending), about 40 seconds, then it loops */
+    function playStep(s, t){
+      var i = s % 16, b = Math.floor(s / 16) % 16, part = Math.floor(b / 4);
+      if (i % 2) t += SWING;                      // shuffle the off-beats
+      if (part === 0){
+        if (b >= 2 && (i === 0 || i === 6)) dum(t, .35);
+        if (b >= 2 && (i === 4 || i === 12)) riq(t, .05);
+        if (b === 3 && (i === 12 || i === 14)) clap(t, .25);   // claps call the beat in
+      } else if (!(b === 15 && i >= 12)){         // the beat stops for the very last beat
+        if (i === 0 || i === 6) dum(t, .6);
+        if (i === 10 && b % 2) dum(t, .4);
+        if (i === 4 || i === 12) tak(t, .3);
+        else if (i === 3 || i === 8 || i === 14) tak(t, .1);
+        if (i === 0 || i === 6 || i === 12) clap(t, .3);       // 3 + 3 + 2 claps
+        if (part >= 2 && (i === 3 || i === 9)) clap(t, .16);  // a second group answers
+        if (i % 2 === 0) riq(t, i % 4 === 0 ? .06 : .03);
+      }
+      if (b === 0 && i === 0) drone(t, S16 * 64);
+      var r1 = BASS[b][0], r2 = BASS[b][1];
+      if (r1){
+        if (i === 0) bass(r1, t, S16 * 5, .22);
+        if (i === 6) bass(r1, t, S16 * 3, .18);
+        if (i === 10) bass(r2 + 12, t, S16 * 2, .12);
+        if (i === 12) bass(r2, t, S16 * (b === 15 ? 6 : 3), .2);
+      }
+      MEL[b].forEach(function(n){
+        if (n[0] !== i) return;
+        oud(n[1], t, n[2], .45);
+        if (part >= 2) strings(n[1], t, n[2] * S16);
+      });
+      if (i === 12 && (b === 3 || b === 11)) run(t, b === 3);
+    }
+    function tick(){
+      if (nextTime < ctx.currentTime) nextTime = ctx.currentTime + .05;
+      while (nextTime < ctx.currentTime + .2){ playStep(step, nextTime); step++; nextTime += S16; }
+    }
+    function fade(to, sec){
+      var now = ctx.currentTime;
+      master.gain.cancelScheduledValues(now);
+      master.gain.setValueAtTime(master.gain.value, now);
+      master.gain.linearRampToValueAtTime(to, now + sec);
+    }
+    var api = {
+      running: function(){ return !!ctx && ctx.state === 'running' && !!timer; },
+      play: function(){
+        wanted = true;
+        if (!ctx) init();
+        ctx.resume();
+        fade(.45, 1.5);
+        if (!timer){ step = 0; nextTime = ctx.currentTime + .05; tick(); timer = setInterval(tick, 40); }
+      },
+      pause: function(){
+        wanted = false;
+        if (!ctx) return;
+        fade(0, .6);
+        clearInterval(timer); timer = null;
+        setTimeout(function(){ if (!wanted) ctx.suspend(); }, 800);
+      },
+      strum: function(){                          // strumming the oud sticker
+        if (!ctx) return;
+        [50, 57, 62, 65, 69].forEach(function(m, k){ pluckAt(m, ctx.currentTime + .02 + k * .03, .3, 1.4); });
+      }
+    };
+    return api;
+  })();
+
+  /* Music starts by itself. Most browsers block sound until the visitor
+     interacts, so then it starts on their first tap, click or key press. */
+  var musicOn = !!Music;
+  var musicBtn = document.querySelector('.music');
+  var musicLabel = musicBtn.querySelector('.music-label');
+  var UNLOCK = ['pointerdown','pointerup','touchend','click','keydown'];
+  function showMusic(){
+    var on = !!Music && musicOn && Music.running();
+    musicBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    musicLabel.textContent = on ? 'pause music' : 'play music';
+    jam(on);
+  }
+  function setMusic(on){
+    musicOn = on;
+    if (on) Music.play(); else Music.pause();
+    showMusic();
+  }
+  function unlock(e){
+    if (!musicOn) return;
+    if (Music.running()){
+      UNLOCK.forEach(function(t){ document.removeEventListener(t, unlock, true); });
+      return;
+    }
+    if (e.target && e.target.closest && e.target.closest('.music')) return;   // the button handles itself
+    Music.play();
+  }
+  if (Music){
+    Music.onchange = showMusic;
+    musicBtn.addEventListener('click', function(){
+      if (musicOn && !Music.running()){ Music.play(); showMusic(); return; }
+      setMusic(!musicOn);
+    });
+    UNLOCK.forEach(function(t){ document.addEventListener(t, unlock, true); });
+    document.addEventListener('visibilitychange', function(){
+      if (!musicOn) return;
+      if (document.hidden) Music.pause(); else Music.play();
+    });
+    Music.play();
+  } else {
+    musicBtn.hidden = true;
+  }
+
+  /* the oud dances while the music plays and floats little notes; tap it to strum */
+  var oudBtn = document.querySelector('.oud'), noteTimer = null, NOTE_CH = ['♪','♫','♩','♬'];
+  function oudNote(){
+    if (reduce || document.hidden) return;
+    var r = oudBtn.getBoundingClientRect();
+    if (!r.width) return;
+    var n = document.createElement('span');
+    n.className = 'p oud-note';
+    n.textContent = pick(NOTE_CH);
+    n.style.cssText = 'left:' + (r.left + r.width * .5) + 'px;top:' + (r.top + r.height * .05) + 'px;color:' + pick(HEX);
+    fx.appendChild(n);
+    n.animate([{ transform:'translate(0,0) scale(.5)', opacity:0 },
+               { opacity:1, offset:.2 },
+               { transform:'translate(' + rnd(8, 50) + 'px,' + (-rnd(45, 90)) + 'px) rotate(' + rnd(-30, 30) + 'deg) scale(1.1)', opacity:0 }],
+              { duration:1600, easing:'ease-out', fill:'forwards' }).onfinish = function(){ n.remove(); };
+  }
+  function jam(on){
+    document.body.classList.toggle('jamming', on);
+    if (on && !noteTimer) noteTimer = setInterval(oudNote, 1250);
+    if (!on && noteTimer){ clearInterval(noteTimer); noteTimer = null; }
+  }
+  oudBtn.addEventListener('click', function(){
+    if (Music){
+      if (!(musicOn && Music.running())) setMusic(true);
+      Music.strum();
+    }
+    oudBtn.animate([{ transform:'scale(1) rotate(0deg)' }, { transform:'scale(1.2) rotate(-10deg)' },
+                    { transform:'scale(.94) rotate(6deg)' }, { transform:'scale(1) rotate(0deg)' }],
+                   { duration:520, easing:'ease-out' });
+    for (var k = 0; k < 3; k++) setTimeout(oudNote, k * 130);
+  });
+
+  function hintFor(c){
+    if (c >= 50) return '<b>' + c + '</b> splashes… you really like it here 💜';
+    if (c >= 25) return '<b>' + c + '</b> splashes, certified art legend ✦';
+    if (c >= 10) return '<b>' + c + '</b> splashes, you\'re an artist now 🎨';
+    return '<b>' + c + '</b> splash' + (c > 1 ? 'es' : '') + ' made, keep going ✿';
+  }
+
+  document.addEventListener('pointerdown', function(e){
+    if (e.button > 0) return;
+    if (e.target.closest('a, button')) return;
+    var ch = e.target.closest('.ch');
+    if (ch){
+      var ci = (+ch.dataset.ci + 1) % COLORS.length;
+      ch.dataset.ci = ci;
+      ch.style.setProperty('--c', COLORS[ci]);
+      ch.animate({ scale:[1, 1.35, 1] }, { duration:420, easing:'cubic-bezier(.3,1.6,.5,1)' });
+    }
+    splash(e.clientX, e.clientY);
+    count++;
+    hint.innerHTML = hintFor(count);
+  });
+})();
+</script>
+</body>
+</html>
